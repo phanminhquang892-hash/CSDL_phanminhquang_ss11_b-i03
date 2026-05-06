@@ -67,3 +67,33 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- test trường hợp bệnh nhân bhyt
+call calculatedischargecost(
+    1000000,
+    'BHYT',
+    @money,
+    @msg
+);
+
+select @money, @msg;
+
+-- test trường hợp bệnh nhân vip
+call calculatedischargecost(
+    2000000,
+    'VIP',
+    @money,
+    @msg
+);
+
+select @money, @msg;
+
+-- test trường hợp bệnh nhân thường
+call calculatedischargecost(
+    1500000,
+    'THUONG',
+    @money,
+    @msg
+);
+
+select @money, @msg;
